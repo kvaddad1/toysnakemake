@@ -1,0 +1,4 @@
+input_file: "data/input.txt"
+output_file: "results/output.txt"
+plot_type: "pdf"
+
