@@ -1,0 +1,6 @@
+name: bash-env
+channels:
+  - defaults
+dependencies:
+  - bash
+  - coreutils

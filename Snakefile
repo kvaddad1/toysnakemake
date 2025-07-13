@@ -2,22 +2,29 @@ configfile: "config.yaml"
 
 rule all:
     input:
-        config["output_file"]
+        config["final_output_file"]
 
 rule process_data:
     input:
         config["input_file"]
     output:
-        output_file=config["output_file"],
-        plot_file="results/plot.pdf"
-    params:
-        plot_type=config["plot_type"]
-    conda:
-        "envs/myenv.yaml"
-    log: 
+        config["output_file"]
+    log:    
         "logs/process_data.log"
-    benchmark:
-        "benchmarks/process_data.txt"
+    conda:
+        "envs/bash.yaml"
     shell:
-        "python script.py {input} {output.output_file} {output.plot_file} {params.plot_type}"
+        "bash scripts/process_data.sh {input} {output}"
+
+rule process_more:
+    input:
+        config["output_file"]
+    output:
+        config["final_output_file"]
+    log:    
+        "logs/process_more.log"
+    conda:
+        "envs/bash.yaml"
+    shell:
+        "bash scripts/process_more.sh {input} {output}"
 

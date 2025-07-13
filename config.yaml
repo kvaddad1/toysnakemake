@@ -1,4 +1,3 @@
 input_file: "data/input.txt"
-output_file: "results/output.txt"
-plot_type: "pdf"
-
+output_file: "result/output.txt"
+final_output_file: "result/final.txt"
