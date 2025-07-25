@@ -1,0 +1,6 @@
+snakemake -j1 -n 
+snakemake --lint --configfile config.yaml 
+snakemake --dag --configfile config.yaml | dot -Tpdf > dag.pdf 
+snakemake --filegraph --configfile config.yaml | dot -Tpdf > filegraph.pdf 
+snakemake --rulegraph --configfile config.yaml | dot -Tpdf > rulegraph.pdf 
+snakemake --report --configfile config.yaml 
