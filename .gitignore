@@ -1,7 +1,6 @@
 .snakemake/
 .pytest_cache/
 result/
-data/
 *.log
 *.pdf
 funtext.egg-info/
